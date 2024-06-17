@@ -1,0 +1,41 @@
+{
+  "posts": [   
+    {
+      "id": "c528",
+      "title": "Optio quaerat sapie",
+      "body": "Tempor aut perferend",
+      "tags": [
+        "html",
+        "css"
+      ]
+    },
+    {
+      "id": "6814",
+      "title": "my ability",
+      "body": "I have proficient in these languages.",
+      "tags": [
+        "bootstrap",
+        "css",
+        "vue",
+        "react"
+      ]
+    },
+    {
+      "id": "7252",
+      "title": "Consequatur in labo",
+      "body": "Voluptatem Ullamco ",
+      "tags": [
+        "Rem sint rerum nobis"
+      ]
+    },
+    {
+      "id": "0bdb",
+      "title": "testing",
+      "body": "testing",
+      "tags": [
+        "testing",
+        "useind"
+      ]
+    }
+  ]
+}
