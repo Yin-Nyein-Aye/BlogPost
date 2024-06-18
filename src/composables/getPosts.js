@@ -1,4 +1,3 @@
-// import { reject, resolve } from 'core-js/fn/promise';
 import {ref } from 'vue';
 import {db} from '../firebase/config'
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';

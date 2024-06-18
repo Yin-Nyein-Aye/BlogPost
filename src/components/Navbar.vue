@@ -27,12 +27,12 @@ header h1{
     color: #dfdfdf;
     font-size:24px;
 }
-header a{
+header nav a{
     color: #bbb;
     text-decoration: none;
     margin-left: 20px;
 }
-header a.router-link-active{
+header nav a.router-link-active{
     color: #444;
     font-weight: bold;
 }

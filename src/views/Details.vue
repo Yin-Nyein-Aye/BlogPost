@@ -4,9 +4,11 @@
       <h2>{{post.title}}</h2>
       <p>{{post.body}}</p>
       <div v-for="tag in post.tags" :key="tag" class="pill">
-        <p>{{tag}}</p>
+        {{tag}}
+      </div>
+      <div class="deletePost">
+        <button @click="deletePost">Delete</button> 
       </div> 
-      <button class="deletePost" @click="deletePost">Delete</button>   
     </div>
     <div v-else>
       <Spinner></Spinner>
@@ -15,7 +17,7 @@
 </template>
 
 <script>
-import { collection, doc } from 'firebase/firestore';
+import { deleteDoc, doc } from 'firebase/firestore';
 import Spinner from '../components/Spinner'
 import getPost from '../composables/getPost'
 import {db} from '../firebase/config'
@@ -23,16 +25,16 @@ import { useRouter } from 'vue-router';
 export default {
   components: { Spinner },
     props : ['id'],
-    setup(props){
+    setup(props){      
         let router = new useRouter();
-        let {post,error,load} = getPost(props.id);
+        let {post,error,load} = getPost(props.id);        
         load();
         let deletePost = async()=>{
-          let id = props.id;
-          await deleteDoc(doc(collection(db, "posts"), id));
+          let id = props.id;          
+          await deleteDoc(doc(db, "posts", id));
           router.push('/');
         }
-        return {post,error}
+        return {post,error,deletePost}
     }    
 }
 </script>
@@ -63,15 +65,12 @@ export default {
   left: -30px;
   transform: rotateZ(-1deg);
 }
-.pill{
-    display: inline-block;
-    border-radius: 30px;
-    background: #f08e8e;
-    padding: 0px 10px;
-    margin: 5px;
-}
 .details{
   max-width: 1200px;
   margin: 0 auto;
 }
+.deletePost{
+  margin: 20px auto;
+}
+
 </style>

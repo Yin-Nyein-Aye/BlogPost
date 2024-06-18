@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 label{
     display: block;
     margin-bottom: 10px;
@@ -95,7 +95,8 @@ button:hover{
     display: inline-block;
     border-radius: 30px;
     background: #f08e8e;
-    padding: 0px 10px;  
+    padding: 8px 8px;  
+    margin: 5px;
 }
 h1,.btn{
     text-align: center;

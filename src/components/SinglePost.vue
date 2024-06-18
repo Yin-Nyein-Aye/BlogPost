@@ -6,7 +6,7 @@
     <p>{{post.body}}</p>
     <div v-for="tag in post.tags" :key="tag" class="pill">
       <router-link :to="{name:'tag',params:{tag}}">
-        <p>{{tag}}</p>
+        {{tag}}
       </router-link>
     </div>
   </div>
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .post{
   margin: 0 40px 30px;
   padding-bottom: 30px;
@@ -44,11 +44,12 @@ export default {
   left: -30px;
   transform: rotateZ(-1deg);
 }
-.pill{
-    display: inline-block;
-    border-radius: 30px;
-    background: #f08e8e;
-    padding: 0px 8px;
-    margin: 5px;
+div a{
+  text-decoration: none;
+}
+.pill a:hover{
+  background-color: #f08e8e;
+  padding: 5px 5px;  
+  border-radius: 30px; 
 }
 </style>
